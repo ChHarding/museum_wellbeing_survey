@@ -1,10 +1,13 @@
-Name,I felt happy.,I felt engaged.,I felt comfortable.,I felt safe and secure.,I enjoyed the company of other people.,I talked to other people.,Comments
-First Attempt,Strongly disagree,Strongly disagree,Strongly disagree,Strongly disagree,Strongly disagree,Strongly disagree,"testing, testing, testing"
-Test1,Disagree,Neither agree nor disagree,Strongly agree,Strongly agree,Disagree,Agree,end of test 1
-Test2,Strongly agree,Strongly agree,Agree,Agree,Neither agree nor disagree,Disagree,end of test2
-Test3,Neither agree nor disagree,Neither agree nor disagree,Disagree,Disagree,Agree,Agree,end of test3
-Another test,Strongly disagree,Agree,Disagree,Agree,Strongly agree,Neither agree nor disagree,
-Testing,Strongly agree,Strongly agree,Strongly agree,Strongly agree,Strongly agree,Strongly agree,I have hope and faith in the process.
-Mozzarella,Neither agree nor disagree,Neither agree nor disagree,Neither agree nor disagree,Neither agree nor disagree,Neither agree nor disagree,Neither agree nor disagree,"I am a cat, and I am as neutral as Switzerland."
-This is bananas,Agree,Agree,Agree,Agree,Agree,Agree,"Totally bonkers, but in a good way?"
-Apples & Oranges,Disagree,Disagree,Disagree,Disagree,Disagree,Disagree,I like to make wishes and hope they come true.
+Name,I felt happy.,I felt engaged.,I felt comfortable.,I felt safe and secure.,I enjoyed the company of other people.,I talked to other people.,Comments,Sentiment Score
+First Attempt,Strongly disagree,Strongly disagree,Strongly disagree,Strongly disagree,Strongly disagree,Strongly disagree,"testing, testing, testing",0.9528170228004456
+Test1,Disagree,Neither agree nor disagree,Strongly agree,Strongly agree,Disagree,Agree,end of test 1,0.6046104431152344
+Test2,Strongly agree,Strongly agree,Agree,Agree,Neither agree nor disagree,Disagree,end of test2,-0.9743235111236572
+Test3,Neither agree nor disagree,Neither agree nor disagree,Disagree,Disagree,Agree,Agree,end of test3,-0.9682359099388123
+Another test,Strongly disagree,Agree,Disagree,Agree,Strongly agree,Neither agree nor disagree,,0.0
+Testing,Strongly agree,Strongly agree,Strongly agree,Strongly agree,Strongly agree,Strongly agree,I have hope and faith in the process.,0.9998261332511902
+Mozzarella,Neither agree nor disagree,Neither agree nor disagree,Neither agree nor disagree,Neither agree nor disagree,Neither agree nor disagree,Neither agree nor disagree,"I am a cat, and I am as neutral as Switzerland.",-0.9929759502410889
+This is bananas,Agree,Agree,Agree,Agree,Agree,Agree,"Totally bonkers, but in a good way?",0.9988414645195007
+Apples & Oranges,Disagree,Disagree,Disagree,Disagree,Disagree,Disagree,I like to make wishes and hope they come true.,0.9997692704200745
+Debugger?,Agree,Strongly disagree,Disagree,Disagree,Strongly agree,Strongly disagree,The Debugger does not work for me. I must be missing something with the configuration.,-0.9997939467430115
+attempting,Agree,Strongly disagree,Disagree,Disagree,Strongly agree,Strongly disagree,"idk, idk, happy?",0.9995089769363403
+Charlie Chaplain,Strongly disagree,Strongly disagree,Strongly disagree,Strongly agree,Strongly agree,Strongly agree,These are my additional comments about the experience of the exhibition.

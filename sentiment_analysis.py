@@ -1,11 +1,9 @@
-%pip install torch
-%pip install tf-keras
 
 import csv
 from transformers import pipeline
 
 # Define the file path
-file_path = "/Users/amendatate/Documents/HCI584/museum_wellbeing_survey/data/wellbeing_survey.csv"
+file_path = "museum_wellbeing_survey/data/wellbeing_survey.csv"
 
 # Specify the model name DistilBERT model from Hugging Face fine-tined on the Standford Sentiment Treebank v2 (SST-2) dataset
 model_name = "distilbert-base-uncased-finetuned-sst-2-english"
