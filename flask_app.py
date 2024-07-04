@@ -6,7 +6,7 @@ import plotly.io as pio
 app = Flask(__name__)
 
 # Define the file path
-file_path = "./data/wellbeing_survey.csv"
+file_path = "museum_wellbeing_survey/data/wellbeing_survey.csv"
 
 @app.route('/')
 def index():
@@ -24,6 +24,11 @@ def index():
             "I talked to other people.",
         ]
 
+        # Ensure all questions are in the DataFrame
+        for question in questions:
+            if question not in df.columns:
+                raise KeyError(f"Column '{question}' not found in the CSV file.")
+
         # Get relevant columns for Likert scale analysis
         likert_data = df[questions]
 
@@ -39,6 +44,8 @@ def index():
         return f"Error: The file at {file_path} was not found."
     except pd.errors.EmptyDataError:
         return "Error: The CSV file is empty."
+    except KeyError as e:
+        return f"An error occurred: {e}"
     except Exception as e:
         return f"An error occurred: {e}"
 
