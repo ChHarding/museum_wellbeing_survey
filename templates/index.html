@@ -1,12 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survey Results</title>
+    <title>Museum Wellbeing Survey Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Example: Set a common font for the entire page */
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 100%; /* Make images fill the container width */
+            max-width: 100%; /* Ensure images don't exceed their original size */
+            height: auto; /* Maintain aspect ratio */
+            margin: 10px 0; /* Add some vertical margin between images */
+        }
+    </style>
 </head>
 <body>
-    <h1>Survey Results</h1>
-    <div>{{ plot_html|safe }}</div>
+    <div class="image-container">
+        {% for image in image_filenames %}
+            {% if image.endswith(('jpg', 'jpeg', 'png', 'gif')) %}
+                <img src="{{ url_for('static', filename=image) }}">
+                <hr> <!-- Line break between images -->
+            {% endif %}
+        {% endfor %}
+    </div>
 </body>
 </html>
+    </style>
+</head>
+<body>
+    <h1>Plot from Likert Scale</h1>
+    <div class="image-container">
+        {% for image in image_filenames %}
+            {% if image.endswith(('jpg', 'jpeg', 'png', 'gif')) %}
+                <img src="{{ url_for('static', filename=image) }}">
+                <hr> <!-- Line break between images -->
+                <h2>Sentiment Analysis of Comments</h2> <!-- New header for next image -->
+            {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>
+</body>
+</html>
+
