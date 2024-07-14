@@ -24,8 +24,9 @@ warnings.filterwarnings("ignore", category=FutureWarning, module="plot_likert")
 # st.session_state is a dictionary that persists across reruns of the script
 # it will have a key init_done after the first run
 if 'init_done' not in st.session_state:
+    st.session_state.init_done = True
     # Define the questions
-    questions = [
+    st.session_state.questions = [
         "I felt happy.",
         "I felt engaged.",
         "I felt comfortable.",
@@ -35,37 +36,43 @@ if 'init_done' not in st.session_state:
     ]
 
     # Define the header
-    header = ["Name"] + questions + ["Comments"]
+    st.session_state.header = ["Name"] + st.session_state.questions + ["Comments"]
 
     # Define the Likert scale
-    scale = plot_likert.scales.agree5
+    st.session_state.scale = plot_likert.scales.agree5
 
     # Create a dictionary to store the responses
-    responses = {}
+    st.session_state.responses = {}
 
     # check where the interpreter is "sitting", must be the root of the project
     # To ensure this, you must open the project root folder(!) in VSCode and then
     # start this file, not just load this file into the editor 
     #print("Current working directory:", os.getcwd())
     #print("files in data folder:", os.listdir("./data"))
-    file_path = "./data/wellbeing_survey.csv"
+    st.session_state.file_path = "./data/wellbeing_survey.csv"
 
     # do we already have the file?
-    create_new_data_file = True if not os.path.exists(file_path) else False
+    st.session_state.create_new_data_file = True if not os.path.exists(st.session_state.file_path) else False
 
     try:
         # Open the CSV file in append mode, creating it if it doesn't exist
-        fo = open(file_path, "a", newline='', encoding='utf-8')
+        st.session_state.fo = open(st.session_state.file_path, "a", newline='', encoding='utf-8')
     except Exception as e:
-        sys.exit(f"An error occurred while opening {file_path}: {e}")
+        st.error(f"An error occurred while opening {st.session_state.file_path}: {e}")
+    
+    st.session_state.writer = csv.writer(st.session_state.fo)
+    
+    if st.session_state.create_new_data_file:
+        st.session_state.writer.writerow(st.session_state.header)
+   
 
-    writer = csv.writer(fo) # this is the csv writer object
+    #writer = csv.writer(fo) # this is the csv writer object
 
-    if create_new_data_file == True:
-        print(file_path, "does not exist, will create it.")
-        writer.writerow(header)
-    else:
-        print(file_path, "exists, will append to it.")
+    #if create_new_data_file == True:
+        #print(file_path, "does not exist, will create it.")
+        #writer.writerow(header)
+    #else:
+        #print(file_path, "exists, will append to it.")
 
 # Inject custom CSS with st.markdown
 st.markdown("""
@@ -83,15 +90,28 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# Function to reset form values
+def reset_form_and_reload():
+    st.session_state.name = "Your name"
+    st.session_state.responses = {question: st.session_state.scale[2] for question in st.session_state.questions}  # index 2 for neutral
+    st.session_state.comments = ""
+        # Close the CSV file
+    st.session_state.fo.close()
+    st.experimental_rerun() # reload the Streamlit app
+
 # Display a label Name with a text input
 name = st.text_input(label="Name", value="Your name")
+responses = {}
 
 # Display the questions and the Likert scale
-for question in questions:
-    responses[question] = st.radio(question, options=scale, index=2)  # start at neutral
+for question in st.session_state.questions:
+    responses[question] = st.radio(question, options=st.session_state.scale, index=2)  # start at neutral
 
 # Display the text field for comments
 comments = st.text_area("Any additional comments?")
+
+# flag to track if form was submitted
+form_submitted = False
 
 # When the submit button is pressed, print the responses and the comments
 if st.button('Submit'):
@@ -104,13 +124,28 @@ if st.button('Submit'):
 
 
     # Prepare the record for saving
-    record = [name] + [responses[question] for question in questions] + [comments]
-    st.write(f"Record to be saved: {record}")  # Debug
+    record = [name] + [responses[question] for question in st.session_state.questions] + [comments]
+    #st.write(f"Record to be saved: {record}")  # Debug
 
     # Write the record
-    writer.writerow(record)
-    fo.flush() # flush the buffer to disk
+    #writer.writerow(record)
+    st.session_state.writer.writerow(record)
+    st.session_state.fo.flush()
+    # flush the buffer to disk
     # this may be needed b/c unless this app is closed, the file will not be closed
     # and so anything in the buffer will be lost
         
     st.success("Your responses have been recorded successfully!")
+    form_submitted = True
+
+# Display the reset button after submission success message
+if form_submitted:
+    if st.button('Reset'):
+        reset_form_and_reload()
+        # Reset form inputs to initial state
+        #name = "Your name"
+        #responses = {question: st.session_state.scale[2] for question in st.session_state.questions}  # index 2 for neutral
+        #comments = ""
+        #st.experimental_rerun()  # Rerun the app to reset the form
+    else:
+        st.session_state.reset = False
