@@ -5,6 +5,7 @@ from textblob import TextBlob
 import matplotlib.pyplot as plt
 import csv
 from transformers import pipeline
+import os
 
 # Define the file path
 file_path = "./data/wellbeing_survey.csv"
@@ -47,7 +48,7 @@ try:
             else:
                 print("Row does not have 8 elements:", row) # Check for missing data elements
 
-        # Calculate the average sentiment score
+    # Calculate the average sentiment score
     if sentiment_scores:
         average_score = sum(sentiment_scores) / len(sentiment_scores)
         print(f"Average Sentiment Score: {average_score}")
@@ -64,27 +65,33 @@ try:
 
     # Add labels, title, and axis labels
     plt.title('Sentiment Analysis')
-    #plt.xlabel('Comments')
     plt.ylabel('Sentiment Score')
-    #plt.xticks(df_sentiment.index, df_sentiment['Comment'], rotation=45)  # Rotate x-axis labels if needed
 
- # Add value labels on top of the bars
+    # Add value labels on top of the bars
     for bar, score in zip(bars, df_sentiment['Sentiment Score']):
         plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), f'{round(score, 2)}',
                  ha='center', va='bottom', fontsize=9)
 
-   # Add horizontal line for average sentiment score
+    # Add horizontal line for average sentiment score
     plt.axhline(y=average_score, color='gray', linestyle='--', label=f'Average Score: {round(average_score, 2)}')
 
     plt.legend()  # Show legend with average score
     plt.tight_layout()
 
     # Save the plot as a PNG file in the 'static' folder
+    static_folder = 'static'
+    if not os.path.exists(static_folder):
+        os.makedirs(static_folder)
     
-    plt.savefig('./static/sentiment_analysis_plot.png')
+    plt.savefig(f'{static_folder}/sentiment_analysis_plot.png', overwrite=True)
+
+    # Display the plot
+    plt.show()
+
+    # Display the plot
     plt.show()
 
 except FileNotFoundError:
     print(f"Error: The file at {file_path} was not found.") # In case file is not found at the path
 except Exception as e:
-    print(f"An error occurred: {e}") # Catch other error
+    print(f"An error occurred: {e}") # Catch other errors
