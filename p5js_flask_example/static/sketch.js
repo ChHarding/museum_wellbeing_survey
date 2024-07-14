@@ -12,7 +12,8 @@ let currentRow = 0; // Keep track of the current row in the CSV
 
 function preload() {
   // Load the CSV file
-  table = loadTable('transformed_file.csv', 'csv', 'header');
+  print(a, b)
+  table = loadTable('static/data.csv', 'csv', 'header');
 }
 
 function setup() {
