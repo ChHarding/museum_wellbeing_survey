@@ -86,3 +86,4 @@ Transformation Help,Agree,Strongly agree,Neither agree nor disagree,Strongly dis
 Little Stuff,Agree,Disagree,Disagree,Agree,Strongly agree,Neither agree nor disagree,"Trying to fix the little stuff so there are not any line wraps in the recording csv file, that way the number of entry row in the wellbeing survey will match the number of rows in the transformed csv file.",-0.9988771080970764
 Testing ,Agree,Strongly agree,Strongly disagree,Strongly agree,Neither agree nor disagree,Strongly agree,Wondering if there is a way to reverse the likert radio button display so strongly agree is at the top and strongly disagree is at the bottom?,-0.997812271118164
 I have dunit,Strongly agree,Strongly agree,Disagree,Agree,Agree,Strongly disagree,I have successfully rearranged the scale to put the strongly agree at the top and the strongly disagree at the bottom. Now to assess what might happen to the results.,-0.8758957982063293
+

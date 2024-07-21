@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask with p5.js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="csvfile" accept=".csv">
+        <input type="submit" value="Upload CSV to kaleidoscopize!">
+    </form>
+
+    <script>
+        // Define global variables here the should be accessible to all scripts
+        var a = 123;
+        var b = "abc";
+    </script>
+
+
+    <script src="{{ url_for('static', filename='sketch.js') }}"></script>
+</body>
+</html>
