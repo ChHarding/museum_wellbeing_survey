@@ -12,4 +12,5 @@ a.  Flask/python
 b.  P5.js
 c.  HTML</li>
 </ol>
-For complete detailed information, see the Developer's Guide in the 
+
+</p>For complete detailed information, see the Developer's Guide in the doc folder.
