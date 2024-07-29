@@ -86,6 +86,7 @@ Transformation Help,Agree,Strongly agree,Neither agree nor disagree,Strongly dis
 Little Stuff,Agree,Disagree,Disagree,Agree,Strongly agree,Neither agree nor disagree,"Trying to fix the little stuff so there are not any line wraps in the recording csv file, that way the number of entry row in the wellbeing survey will match the number of rows in the transformed csv file.",-0.9988771080970764
 Testing ,Agree,Strongly agree,Strongly disagree,Strongly agree,Neither agree nor disagree,Strongly agree,Wondering if there is a way to reverse the likert radio button display so strongly agree is at the top and strongly disagree is at the bottom?,-0.997812271118164
 I have dunit,Strongly agree,Strongly agree,Disagree,Agree,Agree,Strongly disagree,I have successfully rearranged the scale to put the strongly agree at the top and the strongly disagree at the bottom. Now to assess what might happen to the results.,-0.8758957982063293
+<<<<<<< HEAD
 Tuesday Eve,Strongly agree,Strongly agree,Strongly agree,Strongly agree,Strongly agree,Strongly agree,Still at it.,0.9978637099266052
 Tuesday try again,Agree,Agree,Agree,Agree,Agree,Agree,Will it work? Yes or no? Circle one.,0.7103930115699768
 Amenda,Disagree,Disagree,Strongly agree,Strongly agree,Strongly agree,Strongly agree,I updated the path for the transform csv file. Fingers crossed!,-0.9436312317848206
@@ -103,3 +104,6 @@ Which one?,Disagree,Strongly agree,Strongly agree,Agree,Strongly agree,Neither a
 Ugh!,Neither agree nor disagree,Strongly disagree,Strongly disagree,Strongly disagree,Strongly disagree,Neither agree nor disagree,This is all roses and rainbows.,0.999795138835907
 Your Name,Neither agree nor disagree,Neither agree nor disagree,Neither agree nor disagree,Neither agree nor disagree,Neither agree nor disagree,Neither agree nor disagree,,0.0
 Amenda Tate,Strongly disagree,Strongly disagree,Strongly disagree,Strongly disagree,Strongly disagree,Strongly disagree,This was such a great museum visit. The new exhibition was powerful and I felt moved. I am compelled to learn more about unique cultures within my own community.,0.9996850490570068
+=======
+
+>>>>>>> dd080936e189cc799bc3ceb4c3e86be7d45010f5
