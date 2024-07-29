@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Museum Wellbeing Survey Results</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif; /* Set a common font for the entire page */
@@ -36,11 +39,17 @@
             height: 800px; /* Make iframe fill the height of its container */
             border: none; /* Remove iframe border */
         }
-        
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }              
 
     </style>
 </head>
 <body>
+
     <h1>Museum Wellbeing Survey Results</h1>
 
     <h2>Plot from Likert Scale</h2>
@@ -53,10 +62,11 @@
         <img src="{{ url_for('static', filename='sentiment_analysis_plot.png') }}" alt="Sentiment Analysis Plot">
     </div>
 
-    <h2>Artistic Rendering of Data</h2>
-    <div class="iframe-container">
-        <iframe src="https://editor.p5js.org/amendajt/full/RQqCHN8dt" frameborder="0"></iframe>
+    <h2>Artistic Rendering of Data (click to random-render again)</h2>
+    <div id="canvas-container" class="canvas-container">
+
+        <script src="{{ url_for('static', filename='sketch.js') }}"></script>
     </div>
+    
 </body>
 </html>
-
