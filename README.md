@@ -1,4 +1,16 @@
 # museum_wellbeing_survey
+<h1>Overview Flow Chart</h1>
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVKu2uH6w=/?moveToViewport=-533,-606,1766,842&embedId=334893654420" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+</p>
+<p>There are two sections to this documentation:</p>
+<ol>
+<li>Collect survey data
+a.  Streamlit/python</li>
+<li>View survey results
+a.  Flask/python
+b.  P5.js
+c.  HTML</li>
+</ol>
 <h1>for main.py to collect survey data in Streamlit</h1>
 <h1>open new terminal</h1>
 <h1> % cd museum_wellbeing_survey</h1>
