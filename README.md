@@ -15,4 +15,12 @@ c.  HTML</li>
 
 </p>For complete detailed information, see the Developer's Guide in the doc folder.
 </p>
-[User Guide.pdf](https://github.com/user-attachments/files/16416984/User.Guide.pdf)
+[Complete User Guide.pdf](https://github.com/user-attachments/files/16416984/User.Guide.pdf)
+
+[User guide How to Launch Survey.docx](https://github.com/user-attachments/files/16417042/User.guide.How.to.Launch.Survey.docx)
+</p>
+[User guide How to Launch Survey.docx](https://github.com/user-attachments/files/16417072/User.guide.How.to.Launch.Survey.docx)
+</p>
+[How to Complete a Submission to the Museum Wellbeing Survey Form.docx](https://github.com/user-attachments/files/16417043/How.to.Complete.a.Submission.to.the.Museum.Wellbeing.Survey.Form.docx)
+
+</p>[User guide How to View Plots and Artistic Visualization.docx](https://github.com/user-attachments/files/16417040/User.guide.How.to.View.Plots.and.Artistic.Visualization.docx)
